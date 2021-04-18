@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiHome</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./iconfonts/iconfonts.css">
+    <link rel="icon" href="./src/favicon.ico">
+</head>
+
+<body>
+    <div id="app">
+        <!-- 首页 -->
+        <div class="mihome" v-if="curtapbar===tapbars[0]">
+            <div class="nav">
+                <div class="user">
+                    <span class="userhome">ZoZo的家 </span>
+                    <span class=" tixing iconfont icon-tixing"></span>
+                    <span class="add iconfont icon-icon-test"></span>
+                </div>
+                <!-- 导航栏 -->
+                <div class="navbutton">
+                    <div class="switchButton">
+                        <span v-for="tab in tabs" v-bind:class="['tab-button',{active:currentTab===tab}]"
+                            @click="switchEquip(tab)">
+                            {{tab}}
+                        </span>
+                    </div>
+                    <div class="menu" @click="showSmartFunction"></div>
+                </div>
+
+            </div>
+            <transition name="fade" mode="out-in">
+                <div class="smart" v-show="isDisplay">
+                    <div class="son" v-for="(smart,index) in smarts" @click="smartControl(index)">
+                        <span class="smart-tool iconfont icon-huabanfuben"></span>
+                        <p>{{smart.function}}</p>
+                    </div>
+                </div>
+            </transition>
+            <div class="equipment">
+                <!-- <transition-group name="list" tag="p"> -->
+                <div class="son" v-for="(equipment,index) in equipments" @click="showDetail(index)"
+                    v-show="equipment.isDisplay" :key="index">
+                    <span class="iconfont icon-taideng"></span>
+                    <p>{{equipment.name}}</p>
+                    <p>{{equipment.from}}</p>
+                </div>
+                <!-- </transition-group> -->
+            </div>
+            <!-- 点击设备 弹出详细信息 -->
+            <transition name="fade" mode="out-in">
+                <div class="detail" v-show="equipments[currentIndex].isDetailDisplay">
+                    <div class="mask" @click="quitDetail"></div>
+                    <div class="eqm">
+                        <div class="img"></div>
+                        <div class="tool">
+                            <input type="button" class="SwitchOfEqm" v-model="equipments[currentIndex].statu"
+                                @click="SwitchStatu"></input>
+                            <div class="ValueOfEqm">
+                                <input type="range" v-model="equipments[currentIndex].value" class="range"
+                                    :disabled="equipments[currentIndex].statu==='Off'">
+                                <input type="text" v-model="equipments[currentIndex].value" class="text"
+                                    :disabled="equipments[currentIndex].statu==='Off'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+        </div>
+        <!-- 智能控制界面 -->
+        <div v-else-if="curtapbar===tapbars[1]">
+            smartSet
+        </div>
+        <!-- 用户界面 -->
+        <div v-else>
+            User
+        </div>
+        <!-- 底部导航栏 -->
+        <div class="tapbar">
+            <div v-for="(item,index) in tapbars" @click="switchTabbar(index)">
+                <h3>{{item}}</h3>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- vue.js -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="./index.js">  </script>
+
+
+</body>
+
+</html>
