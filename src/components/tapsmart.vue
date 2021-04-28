@@ -1,5 +1,5 @@
 <template>
-  <h2 class="red">test...{{ msg }}</h2>
+  <h2>hello,world!</h2>
 </template>
 
 <script>
