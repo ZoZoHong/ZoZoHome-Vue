@@ -1,0 +1,121 @@
+a {
+  text-decoration: none;
+  color: #b8babc;
+}
+.signIn {
+  width: 100%;
+  height: 330px;
+  display: flex;
+  flex-flow: column wrap;
+  box-shadow: 0px 1px 5px 1px #02b8fa;
+}
+.signIn .signInBackground {
+  height: 127px;
+  background-color: #3868ff;
+  filter: blur(2px);
+}
+.signIn .signInForm {
+  flex: 1;
+  display: flex;
+}
+.signIn .signInForm .left,
+.signIn .signInForm .right {
+  width: 80px;
+}
+.signIn .signInForm .center {
+  flex: 1;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  position: relative;
+}
+.signIn .signInForm .center img {
+  position: absolute;
+  top: -25px;
+  left: calc(50% - 25px);
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  border: 2px solid #b4b4f9;
+}
+.signIn .signInForm .center input {
+  padding: 0;
+  height: 26px;
+  margin: 5px 0;
+  line-height: 26px;
+  background-color: #f7f7f7;
+  border: transparent;
+  border-bottom: 1px solid #b8babc;
+}
+.signIn .signInForm .center input:last-child {
+  background-color: #02b8fa;
+  color: #fff;
+  cursor: pointer;
+}
+.signIn .signInForm .center input:hover {
+  border-bottom: 1px solid #02b8fa;
+}
+.signIn .signInForm .center .signInSelect {
+  height: 26px;
+  font-size: 8px;
+  line-height: 26px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.signIn .signInForm .center .signInSelect div {
+  color: #b8babc;
+  display: flex;
+  align-items: center;
+}
+.signIn .signInForm .center .signInSelect div input[type=checkbox] {
+  background: red;
+}
+.user header {
+  height: 100px;
+  border: 1px solid pink;
+  border-radius: 14px;
+  margin: 10px;
+}
+.user header div {
+  margin: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+.user header div img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.user body ul,
+.user body li {
+  margin: 0;
+  padding: 0;
+}
+.user body .userFirst {
+  border: 1px solid pink;
+  margin: 10px;
+  border-radius: 14px;
+}
+.user body li {
+  display: flex;
+  height: 36px;
+  line-height: 36px;
+  margin: 0 10px;
+  justify-content: space-between;
+  position: relative;
+}
+.user body li .userInfo {
+  position: absolute;
+  left: 30px;
+}
+.user footer {
+  border: 1px solid pink;
+  border-radius: 14px;
+  margin: 10px;
+}
+.user footer span {
+  height: 36px;
+  line-height: 36px;
+  margin: 0 10px;
+}
