@@ -1,15 +1,15 @@
 <template>
-  <h2>hello,world!</h2>
+  <div>
+    <SmartTodo></SmartTodo>
+  </div>
 </template>
 
 <script>
+import SmartTodo from "./smart/SmartTodo";
+
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: {
-      type: String,
-      default: "test msg",
-    },
+  components: {
+    SmartTodo,
   },
   mounted() {},
   methods: {},

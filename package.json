@@ -12,7 +12,8 @@
     "less": "^4.1.1",
     "less-loader": "^8.1.1",
     "mqtt": "^4.2.6",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
