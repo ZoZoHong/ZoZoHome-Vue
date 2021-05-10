@@ -21,27 +21,38 @@ git merge <分支名> 到当前分支
 
 git branch -d <分支名>
 
+## 项目相关操作
+
+### 一.起别名
+
+    1. 目的解决路径相关的问题
+    2. vuecli 脚手架解决路径问题
+
+### 二. Vuex
+
+    1. store -> 仓库 vuex
+
 ## Project setup
 
-```javascript
+```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
 
-```javascript
+```
 npm run serve
 ```
 
 ### Compiles and minifies for production
 
-```javascript
+```
 npm run build
 ```
 
 ### Lints and fixes files
 
-```linux
+```
 npm run lint
 
 ```
