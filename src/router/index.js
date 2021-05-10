@@ -1,22 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../view/home.vue'
+import Home from '../views/home.vue'
 
-const Smart = () => import('../view/smart.vue')
-const User = () => import('../view/user.vue')
+const Smart = () => import('../views/smart.vue')
+const User = () => import('../views/user.vue')
+const Test = () => import('../views/test.vue')
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '',
-    redirect:'/home'
+    redirect: '/home'
   },
   {
     path: '/home',
     name: 'Home',
     meta: {
-      title:'首页'
+      title: '首页'
     },
     component: Home
   },
@@ -24,7 +25,7 @@ const routes = [
     path: '/user',
     name: 'User',
     meta: {
-      title:'我的'
+      title: '我的'
     },
     component: User
   },
@@ -32,16 +33,24 @@ const routes = [
     path: '/smart',
     name: 'Smart',
     meta: {
-      title:'智能'
+      title: '智能'
     },
     component: Smart
-  }
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    meta: {
+      title: '测试'
+    },
+    component: Test
+  },
 ]
 
 const router = new VueRouter({
   routes,
   mode: 'history',
-  linkActiveClass:'active'
+  linkActiveClass: 'active'
 })
 
 router.beforeEach((to, from, next) => {

@@ -1,33 +1,25 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/smart">Smart</router-link>|
       <router-link to="/user">User</router-link>
-    </div>
+    </div> -->
+    <tabbar-main></tabbar-main>
     <keep-alive>
-    
-    <router-view/>
+      <router-view />
     </keep-alive>
   </div>
 </template>
 
+<script>
+import TabbarMain from './components/tabbar/TabbarMain'
+export default {
+  components: {
+    TabbarMain
+  }
+}
+</script>
+
 <style>
- #nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 62.5px;
-      border-top: 1px solid #e8e8e8;
-      background-color: #fff;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-  }
-
-  #nav div h3 {
-      font-weight: normal;
-  }
-
 </style>

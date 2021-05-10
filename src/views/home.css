@@ -216,23 +216,7 @@
       width: 40px;
   }
 
-  .tapbar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 62.5px;
-      border-top: 1px solid #e8e8e8;
-      background-color: #fff;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-  }
-
-  .tapbar div h3 {
-      font-weight: normal;
-  }
-
+ 
   .fade-enter-active, .fade-leave-active {
       transition: opacity 0.5s ease;
   }

@@ -16,7 +16,7 @@
 
     <ul>
       <!--  @click="showDetail" -->
-      <li v-for="(item, index) in todo" :key="item">
+      <li v-for="(item, index) in todo" :key="item.index">
         {{ item.content }}
         <button @click="remove(index)">x</button>
         <!-- v-bind 绑定 才能自定义属性 -->
@@ -41,7 +41,7 @@ export default {
       default: "test msg",
     },
   },
-  data() {
+  data () {
     return {
       todo: [
         {
@@ -63,23 +63,23 @@ export default {
       willAdd: "",
     };
   },
-  mounted() {},
+  mounted () { },
   methods: {
-    add(temp) {
+    add (temp) {
       let a = {
         content: temp,
         id: this.cnt++,
       };
       this.todo.push(a);
     },
-    pop() {
+    pop () {
       this.cnt--;
       this.todo.pop();
     },
-    remove(index) {
+    remove (index) {
       this.todo.splice(index, 1);
     },
-    showDetail() {
+    showDetail () {
       this.isShowDetail = !this.isShowDetail;
     },
   },
