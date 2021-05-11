@@ -2,8 +2,6 @@
   <div class="tabbarItem" @click="goto" :style="activeStyle">
     <slot name="item-icon"></slot>
     <slot name="item-name"></slot>
-    <!-- <div class="tabbarIcon"><span class="iconfont icon-tixing"></span></div>
-    <div class="tabbarName"><span>首页</span></div> -->
   </div>
 </template>
 

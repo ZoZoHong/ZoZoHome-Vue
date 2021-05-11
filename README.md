@@ -30,7 +30,16 @@ git branch -d <分支名>
 
 ### 二. Vuex
 
-    1. store -> 仓库 vuex
+    1. store -> 仓库 
+    2. 核心概念
+       1. state
+       2. getter 
+          1. 相当于computed 
+       3. mutation 状态更新
+          1. 事件类型 回调函数
+          2. payload
+          3. 要求是同步函数
+       4. action 弥补mutation不能监听异步操作
 
 ## Project setup
 
