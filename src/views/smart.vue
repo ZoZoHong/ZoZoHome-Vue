@@ -1,15 +1,21 @@
 <template>
   <div>
     <mihome-smart />
+    <smart-add />
+    <smart-time />
   </div>
 </template>
 
 <script>
 import MihomeSmart from '../components/mihome/MihomeSmart.vue';
+import SmartAdd from '../components/smart/SmartAdd.vue';
+import SmartTime from '../components/smart/SmartTime.vue';
 
 export default {
   components: {
-    MihomeSmart
+    MihomeSmart,
+    SmartAdd,
+    SmartTime
   },
   mounted () { },
   methods: {},

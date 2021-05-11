@@ -15,9 +15,9 @@ import tapmihome from "../components/tapmihome";
 
 
 export default {
-  data() {
+  data () {
     return {
-     
+
     };
   },
   components: {
@@ -25,10 +25,10 @@ export default {
     tapmihome,
   },
   computed: {
-    
+
   },
   methods: {
-    
+
   },
 };
 </script>
