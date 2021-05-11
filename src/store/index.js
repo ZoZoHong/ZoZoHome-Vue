@@ -7,6 +7,23 @@ Vue.use(Vuex)
 // $store.<属性> 可以全局使用属性
 export default new Vuex.Store({
   state: {
+    smarts: [
+      {
+        id: 1,
+        function: "我出门了",
+        img: "url",
+      },
+      {
+        id: 2,
+        function: "我回家了",
+        img: "url",
+      },
+      {
+        id: 3,
+        function: "我去去就来了",
+        img: "url",
+      },
+    ],
   },
   mutations: {
   },

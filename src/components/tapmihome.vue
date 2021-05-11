@@ -24,17 +24,7 @@
         </div>
       </div>
       <transition name="fade" mode="out-in">
-        <div class="smart" v-show="isDisplay">
-          <div
-            class="son"
-            v-for="(smart, index) in smarts"
-            :key="smart.function"
-            @click="smartControl(index)"
-          >
-            <span class="smart-tool iconfont icon-huabanfuben"></span>
-            <p>{{ smart.function }}</p>
-          </div>
-        </div>
+        <mihome-smart v-show="isDisplay" />
       </transition>
       <div class="equipment">
         <!-- <transition-group name="list" tag="p"> -->
@@ -91,8 +81,10 @@
 </style>
 
 <script>
+import MihomeSmart from './mihome/MihomeSmart.vue';
 export default {
-  data() {
+  components: { MihomeSmart },
+  data () {
     return {
       isActive: true,
       currentTab: "常用",
@@ -157,23 +149,6 @@ export default {
           isDetailDisplay: false,
         },
       ],
-      smarts: [
-        {
-          id: 1,
-          function: "我出门了",
-          img: "url",
-        },
-        {
-          id: 2,
-          function: "我回家了",
-          img: "url",
-        },
-        {
-          id: 3,
-          function: "我去去就来了",
-          img: "url",
-        },
-      ],
       isDisplay: true,
       // 以下是临时设置，要删的
     };
@@ -184,7 +159,7 @@ export default {
     },
   },
   methods: {
-    showDetail(index) {
+    showDetail (index) {
       console.log(
         this.equipments[index].name + "from" + this.equipments[index].from
       );
@@ -192,17 +167,13 @@ export default {
       this.equipments[index].isDetailDisplay = true;
       this.currentIndex = index;
     },
-    quitDetail() {
+    quitDetail () {
       this.equipments[this.currentIndex].isDetailDisplay = false;
     },
-    smartControl(index) {
-      console.log(this.smarts[index].function);
-      console.log(typeof this.equipments);
-    },
-    showSmartFunction() {
+    showSmartFunction () {
       this.isDisplay = !this.isDisplay;
     },
-    switchEquip(tab) {
+    switchEquip (tab) {
       this.currentTab = tab;
       // 修改eqm的isDisplay
       for (let i of this.equipments) {
@@ -215,7 +186,7 @@ export default {
         }
       }
     },
-    SwitchStatu() {
+    SwitchStatu () {
       if (this.equipments[this.currentIndex].statu === "On") {
         this.equipments[this.currentIndex].statu = "Off";
       } else {

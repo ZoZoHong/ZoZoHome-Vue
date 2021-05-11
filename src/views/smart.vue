@@ -1,19 +1,19 @@
 <template>
   <div>
-    <smart-todo></smart-todo>
+    <mihome-smart />
   </div>
 </template>
 
 <script>
-import SmartTodo from "../components/smart/SmartTodo";
+import MihomeSmart from '../components/mihome/MihomeSmart.vue';
 
 export default {
   components: {
-    SmartTodo,
+    MihomeSmart
   },
-  mounted() {},
+  mounted () { },
   methods: {},
-  data() {
+  data () {
     return {};
   },
 };
