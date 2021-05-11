@@ -10,7 +10,7 @@
 
 .iconfont {
     font-family: "iconfont" !important;
-    font-size: 16px;
+    font-size: 24px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -68,6 +68,6 @@
     content: "\e633";
 }
 
-.icon-yousanjiao:before {
+.icon-yousanjiao::after {
     content: "\e6c8";
 }
