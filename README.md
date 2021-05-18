@@ -41,6 +41,19 @@ git branch -d <分支名>
           3. 要求是同步函数
        4. action 弥补mutation不能监听异步操作
 
+### 三. axios 网络模块
+
+   [axios中文手册](http://www.axios-js.com/zh-cn/docs/index.html#%E6%8B%A6%E6%88%AA%E5%99%A8)
+   1. 传统网络请求 Ajax - > jQuery-Ajax -> axios ,其实 axios也是Ajax库
+   2. 跨域问题 JSONP 
+   3. 返回promise
+   4. 创建实例 , 封装实例
+   5. 拦截器
+      1. interceptor 在请求或响应被 then 或 catch 处理前拦截它们。
+      2. 拦截完后要 返回去config
+      3. 返回前做一下事情
+      4. 
+
 ## Project setup
 
 ```
