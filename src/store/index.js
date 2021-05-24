@@ -24,6 +24,9 @@ export default new Vuex.Store({
         img: "url",
       },
     ],
+    message: [
+
+    ]
   },
   mutations: {
   },

@@ -3,6 +3,7 @@
     <mihome-smart />
     <smart-add />
     <smart-time />
+    <router-link to=""></router-link>
   </div>
 </template>
 

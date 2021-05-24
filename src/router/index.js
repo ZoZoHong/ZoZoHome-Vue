@@ -4,7 +4,7 @@ import Home from '../views/home.vue'
 
 const Smart = () => import('../views/smart.vue')
 const User = () => import('../views/user.vue')
-const Test = () => import('../views/test.vue')
+const Mymqtt = () => import('../views/Mymqtt.vue')
 
 Vue.use(VueRouter)
 
@@ -38,12 +38,12 @@ const routes = [
     component: Smart
   },
   {
-    path: '/test',
-    name: 'Test',
+    path: '/mqtt',
+    name: 'Mqtt',
     meta: {
       title: '测试'
     },
-    component: Test
+    component: Mymqtt
   },
 ]
 

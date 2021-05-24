@@ -12,10 +12,10 @@
       <div slot="item-icon" class="iconfont icon-wode"></div>
       <div slot="item-name">我的</div>
     </tabbar-item>
-    <!-- <tabbar-item path="/test">
+    <tabbar-item path="/mqtt">
       <div slot="item-icon" class="iconfont icon-wode"></div>
       <div slot="item-name">测试</div>
-    </tabbar-item> -->
+    </tabbar-item>
   </tabbar>
 </template>
 
