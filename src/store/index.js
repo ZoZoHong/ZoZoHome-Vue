@@ -28,7 +28,15 @@ export default new Vuex.Store({
 
     ]
   },
+  getters: {
+    messageUpper (state) {
+      return state.message.map((str) => str.substring(0, 1).toUpperCase() + str.substring(1));
+    }
+  },
   mutations: {
+    getMessage (state, payload) {
+      state.message.push(`${payload.message} from ${payload.topic}`)
+    }
   },
   actions: {
   },

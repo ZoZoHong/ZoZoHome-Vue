@@ -21,7 +21,7 @@
     </div>
     <ul>
       <h1>message</h1>
-      <li v-for="content in $store.state.message" :key="content.index">
+      <li v-for="content in $store.getters.messageUpper" :key="content.index">
         {{ content }}
       </li>
     </ul>
@@ -65,8 +65,11 @@ export default {
     });
     client.on('message', (topic, payload) => {
       let payloadtoString = payload.toString('utf-8');
-      console.log(topic, payloadtoString);
-      this.$store.state.message.push(`${payloadtoString} from ${topic}`);
+      this.$store.commit({
+        type: 'getMessage',
+        message: payloadtoString,
+        topic: topic
+      });
       if (payloadtoString.substring(0, 3) === 'SET') {
         console.log('设置....');
       }
@@ -112,8 +115,7 @@ export default {
       client.publish(topic, content, {
         qos: 1
       }, () => {
-        this.subscribed = client._resubscribeTopics;
-        console.log('publish' + topic + ':' + content);
+        console.log('publish / ' + topic + ':' + content);
       });
     },
   }
