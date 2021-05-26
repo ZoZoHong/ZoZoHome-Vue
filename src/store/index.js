@@ -25,17 +25,29 @@ export default new Vuex.Store({
       },
     ],
     message: [
-
-    ]
+    ],
+    messageObj: []
   },
   getters: {
     messageUpper (state) {
       return state.message.map((str) => str.substring(0, 1).toUpperCase() + str.substring(1));
-    }
+    },
+
   },
   mutations: {
     getMessage (state, payload) {
       state.message.push(`${payload.message} from ${payload.topic}`)
+    },
+    getMessageObj (state, payload) {
+      let index = state.messageObj.findIndex(v => v.id === payload.json.id);
+      if (index !== -1) {
+        // 有这一项, 那就代替, 但是等于不是响应式的
+        state.messageObj[index] = payload.json;
+      } else {
+        state.messageObj.push(payload.json);
+      }
+      // state.messageObj = state.messageObj.filter(v => v.id === payload.json.id)
+      state.messageObj.sort((a, b) => a.id - b.id)
     }
   },
   actions: {

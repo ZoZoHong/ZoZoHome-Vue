@@ -82,3 +82,6 @@ npm run lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 报错代码
+Unexpected token O in JSON at position 23 -> 输入的不是JSON格式,或格式有错
