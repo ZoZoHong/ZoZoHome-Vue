@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import moduleEqm from './modules/moduleEqm'
 // 1.安装插件 use 自动install
 Vue.use(Vuex)
 // 2.创建对象然后暴露出去
 // $store.<属性> 可以全局使用属性
+
+
+
 export default new Vuex.Store({
   state: {
     smarts: [
@@ -24,8 +27,7 @@ export default new Vuex.Store({
         img: "url",
       },
     ],
-    message: [
-    ],
+    message: [],
     messageObj: []
   },
   getters: {
@@ -53,5 +55,7 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
+    eqm: moduleEqm
   }
+
 })
