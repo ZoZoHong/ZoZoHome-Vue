@@ -82,6 +82,9 @@
 
 <script>
 import MihomeSmart from './mihome/MihomeSmart.vue';
+
+
+
 export default {
   components: { MihomeSmart },
   data () {
