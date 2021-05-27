@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 首页 -->
-    <tapmihome></tapmihome>
+    <MihomeMain></MihomeMain>
     <slot></slot>
   </div>
 </template>
@@ -10,7 +10,7 @@
 </style>
 
 <script>
-import tapmihome from "../components/tapmihome";
+import MihomeMain from "../components/mihome/MihomeMain";
 
 
 
@@ -22,7 +22,7 @@ export default {
   },
   components: {
     // 这里的话是局部组件
-    tapmihome,
+    MihomeMain,
   },
   computed: {
 

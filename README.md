@@ -21,6 +21,8 @@ git merge <分支名> 到当前分支
 
 git branch -d <分支名>
 
+强制推送 git push -f github master
+
 ## 项目相关操作
 
 ### 一.起别名
