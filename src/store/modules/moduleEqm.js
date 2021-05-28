@@ -62,20 +62,41 @@ export default {
         ],
     }),
     mutations: {
+        // UPDATE (state, payload) {
+        //     console.log(state.equipments);
+        //     let index = state.equipments.findIndex(v => v.id === payload.json.id);
+        //     if (index !== -1) {
+        //         // 有这一项, 那就代替, 但是等于不是响应式的
+        //         state.equipments[index] = payload.json;
+        //     } else {
+        //         state.equipments.push(payload.json);
+        //     }
+        //     // state.eqm.equipments = state.eqm.equipments.filter(v => v.id === payload.json.id)
+        //     state.equipments.sort((a, b) => a.id - b.id)
+        // }
         UPDATE (state, payload) {
-            console.log(state.equipments);
-            let index = state.equipments.findIndex(v => v.id === payload.json.id);
-            if (index !== -1) {
-                // 有这一项, 那就代替, 但是等于不是响应式的
-                state.equipments[index] = payload.json;
+
+            if (payload.json !== undefined) {
+                // 先找id
+                console.log('i am here');
+                let index = state.equipments.findIndex(v => v.id === payload.json.id)
+                state.equipments[index].statu = payload.json.statu;
             } else {
-                state.equipments.push(payload.json);
+                state.equipments[payload.eqm.eqm.id].statu = payload.eqm.eqm.statu;
             }
-            // state.eqm.equipments = state.eqm.equipments.filter(v => v.id === payload.json.id)
-            state.equipments.sort((a, b) => a.id - b.id)
+            console.log(state);
         }
     },
-    actions: {},
+    actions: {
+        UpdateEqmInfo ({ commit }, eqm) {
+            // context <=> store
+            commit({
+                type: 'UPDATE',
+                eqm: eqm
+            });
+
+        }
+    },
     getters: {}
 }
 

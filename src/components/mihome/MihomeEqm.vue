@@ -50,6 +50,11 @@
 </template>
 
 <script>
+
+import { connect } from 'mqtt'
+const client = connect('wss://mqttx.cn:8883/mqtt');
+
+
 export default {
   props: {
     currentTab: {
@@ -99,12 +104,21 @@ export default {
       this.equipments[this.currentIndex].isDetailDisplay = false;
     },
     SwitchStatu () {
+      // 描述一下当前
+      client.publish('ZoZo/test',)
       if (this.equipments[this.currentIndex].statu === "On") {
         this.equipments[this.currentIndex].statu = "Off";
         // 发送Mqtt指令
       } else {
         this.equipments[this.currentIndex].statu = "On";
       }
+      this.$store.dispatch({
+        type: 'UpdateEqmInfo',
+        eqm: {
+          statu: this.equipments[this.currentIndex].statu,
+          id: this.currentIndex
+        }
+      });
     },
   },
 }

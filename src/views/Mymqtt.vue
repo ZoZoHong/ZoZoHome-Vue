@@ -67,6 +67,9 @@ export default {
       client.subscribe('test/mqttfx', {
         qos: 1
       });
+      client.subscribe('ZoZo/test', {
+        qos: 1
+      })
     });
     client.on('message', (topic, payload) => {
       let payloadtoString = payload.toString('utf-8');
