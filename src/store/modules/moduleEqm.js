@@ -61,7 +61,20 @@ export default {
             },
         ],
     }),
-    mutations: {},
+    mutations: {
+        UPDATE (state, payload) {
+            console.log(state.equipments);
+            let index = state.equipments.findIndex(v => v.id === payload.json.id);
+            if (index !== -1) {
+                // 有这一项, 那就代替, 但是等于不是响应式的
+                state.equipments[index] = payload.json;
+            } else {
+                state.equipments.push(payload.json);
+            }
+            // state.eqm.equipments = state.eqm.equipments.filter(v => v.id === payload.json.id)
+            state.equipments.sort((a, b) => a.id - b.id)
+        }
+    },
     actions: {},
     getters: {}
 }

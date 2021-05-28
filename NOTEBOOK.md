@@ -35,6 +35,12 @@
 -   使用sort将信息进去排序,完成响应式开发, 最后去理解一下响应式的原理,使用sort是因为vue刚好把响应式弄到他们身上
 
 
+## mutation 
+    只能放同步操作
+
+## actions 
+    可以包含任意异步操作,然后提交给mutation
+
 ## 明天修改一下排版哦
 
 Everything up-to-date

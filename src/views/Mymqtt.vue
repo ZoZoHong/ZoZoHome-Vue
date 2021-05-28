@@ -75,6 +75,11 @@ export default {
           type: 'getMessageObj',
           json: JSON.parse(payloadtoString),
         });
+      } else if (topic.substring(0, 4) === 'ZoZo') {
+        this.$store.commit({
+          type: 'UPDATE',
+          json: JSON.parse(payloadtoString),
+        });
       } else {
         this.$store.commit({
           type: 'getMessage',
